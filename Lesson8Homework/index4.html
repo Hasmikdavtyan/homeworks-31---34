@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+  
+   
+new Promise((resolve, reject) => {
+    var start=Date.now();
+	for (var i = 0; ; i++) {
+	var end = Date.now(); // done
+    var time=end-start;
+	  if(time<1000){
+	  	 var doSomething = i**i;
+	  }else{
+	  	break;
+	  }
+      }
+      if(i>1e7){
+      	resolve("done "+i)
+      }else{
+      	reject("cant "+i)
+      }
+}).finally(() => alert("Promise ready"))
+.then(
+
+  result => alert(result), // shows "done!" after 1 second
+  error => alert(error) // doesn't run
+
+
+)
+  
+  
+</script> 
+
+</body>
+</html>

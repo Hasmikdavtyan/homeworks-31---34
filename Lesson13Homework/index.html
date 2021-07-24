@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form>
+	<input type="" name="" >
+	<input type="" name="">
+</form>
+
+
+<p hidden>Thanks for message</p>
+<script>
+  document.documentElement.onkeydown = function(event) {
+   
+    	if(event.key=="m" && event.ctrlKey){
+          document.querySelector('form').hidden=true
+          document.querySelector('p').hidden=false
+       }
+    
+  };
+</script>
+
+</body>
+</html>

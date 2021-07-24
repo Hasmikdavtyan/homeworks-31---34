@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="openWin()">Create new window</button>
+<button onclick="moveWinTo()">Move new window</button>
+<button onclick="moveWinBy()">Move the new window by 75 * 50px</button>
+<button onclick="resize()">Resize</button>
+<button onclick="closeW()">Close</button>
+<script>
+var myWindow;
+
+function openWin() {
+  myWindow = window.open("", "", "width=250, height=250");
+}
+
+function moveWinTo() {
+  myWindow.moveTo(150, 150);
+  myWindow.focus();
+}
+
+function moveWinBy() {
+  myWindow.moveBy(75, 50);
+  myWindow.focus();
+}
+function resize() {
+  myWindow.resizeTo(1200, 400);
+    myWindow.focus();
+ }
+ function closeW() {
+  myWindow.close();
+    
+ }
+</script>
+
+</body>
+</html>

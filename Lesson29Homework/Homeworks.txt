@@ -1,0 +1,32 @@
+ Ստեղծել config պապկա որի index.js ֆայլում պահել ճանապարհը դեպի որևէ դատաբազա:
+Models պապկայում  ստեղծել People.js ֆայլ, որի մեջ People մոդել հետևյալ դաշտերի համար՝ name, email, tel: Արտահանել մոդոլը: creator.js գրել ծրագիր որը կստեղծի peolpe collection որի մեջ ներմուծել ՝ 
+
+               {name:'Anna', email:'Anna@gmail.com', tel:'9210053520'},
+               {name:'Maria', email:'Maria@gmail.com', tel:'9810098100'},
+               {name:'Lara', email:'Lara@gmail.com', tel:'9210053520'},
+               {name:'Mery', email:'Mery@gmail.com', tel:'9810098100'},
+               {name:'Greta', email:'Greta@gmail.com', tel:'9210053520'},
+               {name:'Sirun', email:'Sirun@gmail.com', tel:'9810098100'}
+       
+   ինֆորմացիան:
+
+1. Ջնջել  people collection-ի   name:'Sirun' դաշտը ունեցող document-ը:
+
+2.Ունենք էջ , որում կա հղումներ 
+<nav>
+    <a href="/">Page1</a>
+    <a href="/?page=2">Page2</a>
+    <a href="/?page=3">Page3</a>
+    <a href="/?page=4">Page4</a>
+  </nav>
+Ստեղծել ծրագիր որ, եթե առաջին հղմանը(Page1) սեղմենք արտածի  Info collection   առաջին  document-ի name, Page2 սեմելիս հաջորդ document-ի name-ը:
+
+3.Model պապկայում  ստեղծել models.js ֆայլ, որի մեջ ստեղծել երկու մոդել User:
+User ունի  name, email :
+Blog ունի  title, auther, body որտեղ auther հղում  է դեպի User մոդել:
+Ստեղծել User, Blog մոդելներ համապատասխանաբար users, blogs անուն ունեցող collection համար և արտահանել մոդելները:
+
+
+4. Ստեղծել ծրագիր որով այցելուն կարող է doc ստեղծել users collection մեջ ընդ որում նույն անուն մի անգամ կարող է օգտագործել:
+
+5. Ստեղծել ծրագիր որով այցելուն կարող է doc ստեղծել blogs  collection մեջ ընդ որում user անունը պետք է select option ընտրի գործող user ցանկից:

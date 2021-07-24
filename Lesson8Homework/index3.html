@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	let messages = [
+  {text: "Hello", from: "Sunny"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];
+
+let readMap = new Map();
+
+readMap.set(messages[0], new Date(2020,1,1));
+readMap.set(messages[1], new Date(2018,1,2));
+readMap.set(messages[2], new Date(2017,2,1));
+// Date object we'll study later
+
+
+for(let mess of readMap.keys()){
+	if(readMap.get(mess).getFullYear()>2019){
+		alert(mess.from)
+	}
+ 
+}
+</script>
+	  
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<style>
+  .error {
+    background: red;
+  }
+</style>
+<form id="myform" onsubmit="return check()">
+  <input type="text" id="input1" placeholder="minimal numer characters is 6 maximal12" >
+  <input type="password" id="input2" style="width:220px" placeholder="second" >
+  <input type="submit" name="" value="submit">
+</form>
+ <span id="result"></span>
+<script>
+  myform.elements[1].onfocus = function() {
+    if(myform.elements[0].value.length==0)
+     myform.elements[0].focus();
+  }
+
+</script>
+
+</body>
+</html>

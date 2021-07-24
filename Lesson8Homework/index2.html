@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+    user1={
+       name: 'Sveta',
+       online: true
+   }
+
+    user2={
+       name: 'Sunny',
+      online: true
+   }
+
+      user3={
+       name: 'Suzanne',
+       online: false
+   }
+var users=[user1,user2,user3]
+
+
+
+var onlines = new Set()
+
+
+for(let user of users){
+
+	if(user.online==true){
+		onlines.add(user)
+	}
+}
+
+
+for(let user of onlines){
+	document.write(user.name+"<br>")
+}
+</script> 
+       
+
+
+</body>
+</html>

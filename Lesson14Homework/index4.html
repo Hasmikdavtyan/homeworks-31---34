@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Form Demo</title>
+   
+    <style type="text/css">
+        form input.error {
+            border-color: #e74c3c
+        }
+        form input.success {
+            border-color: #c3e6cb
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form action="" method="post" id="signup">
+            <h1>Sign Up</h1>
+            <p>
+               Login 
+            <input type="text" name="emailS" placeholder="Email Address"><small></small>
+            </p>
+             <p>
+                
+            Password<input type="text" name="passwordS" placeholder="Password"><small></small>
+            </p>
+         
+         
+            
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+     <div id="container" >
+        <form action="welcome.html" method="post" id="login" hidden>
+            <h1>Login</h1>
+            <p>
+               Login 
+            <input type="text" name="emailL" placeholder="Email Address"><small></small>
+            </p>
+             <p>
+                
+            Password<input type="text" name="passwordL" placeholder="Password"><small></small>
+            </p>
+         
+         
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+   
+    <script >
+    var userObj={}   
+    function error(input, message) {
+    input.className = 'error';
+    // show the error message
+    const error = input.nextElementSibling;
+    error.innerText = message;
+    return false;
+}
+
+  
+
+    function success(input) {
+        input.className = 'success';
+        // hide the error message
+        const error = input.nextElementSibling;
+        error.innerText = '';
+        return true;
+    }
+
+
+
+    function requireValue(input, message) {
+
+        return input.value.trim() === '' ?
+            error(input, message) :
+            success(input);
+    }
+
+
+    function validateEmail(input) {
+ 
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        return re.test(input.value.trim()) ?
+            success(input) :
+            error(input, 'Invalid email format');
+    }
+   
+    function validatePassword(input) {
+ 
+    
+
+        return (input.value.trim().length>5) ?
+            success(input) :
+            error(input, 'Short must be at list 6');
+    }
+
+
+
+    const form = document.getElementById('signup');
+
+    // get name and email elements
+    const emailS = form.elements.emailS;
+    const passwordS = form.elements.passwordS;
+
+
+    const requiredFields = [
+        {input: emailS, message: 'Email is required'},
+        {input: passwordS,message: 'Password is required'}
+    ];
+
+
+    form.addEventListener('submit', (event) => {
+       event.preventDefault();
+        // check required fields
+        let valid = true;
+        requiredFields.forEach((input) => {
+            valid = requireValue(input.input, input.message);
+        });
+        // validate email
+        if (valid) {
+            valid = validateEmail(emailS);
+        }
+  
+     
+         if (valid) {
+           valid=validatePassword(passwordS)
+           
+           
+        }
+         
+        // stop submitting the form if the data is invalid
+        
+     if (valid) {
+        userObj.userLogin=emailS.value
+        userObj.userPassword=passwordS.value
+       signup.hidden=true
+       login.hidden=false
+        const formL = document.getElementById('login');
+
+             formL.addEventListener('submit',(event)=>{
+                
+
+                  const emailL = formL.elements.emailL;
+                  const passwordL = formL.elements.passwordL;
+             
+                  if(emailL.value==userObj.userLogin && passwordL.value==userObj.userPassword){
+                     return
+                  }
+                 event.preventDefault();
+
+             })
+
+     }
+                
+      
+      
+        
+      
+        
+
+    
+
+        
+    });
+
+
+   
+    
+
+    </script>
+</body>
+</html>

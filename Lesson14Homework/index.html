@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+	
+	<a href="http://sunnyschool.am/">SUNNY SCHOOL</a>
+	<script type="text/javascript">
+           var start=Date.now()
+		
+			window.addEventListener('beforeunload', function (e) {
+				if(Date.now()-start>10*1000){
+			    e.preventDefault();
+			    e.returnValue = '';
+			    }
+			});
+		
+
+	</script>
+
+</body>
+</html>

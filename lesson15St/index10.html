@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<p id="demo"></p>
+<script>
+document.getElementById("demo").innerHTML =
+"cookiesEnabled is " + navigator.cookieEnabled;
+document.getElementById("demo").innerHTML +=
+"<br><br><br><br>navigator.appName is:  " + navigator.appName;
+document.getElementById("demo").innerHTML +=
+"<br><br><br>navigator.appCodeName is:  " + navigator.appCodeName;
+document.getElementById("demo").innerHTML +=
+"<br><br><br>navigator.product is:  " + navigator.product+"<br>";
+document.getElementById("demo").innerHTML +="appVersion:  "+navigator.appVersion+"<br><br><br><br>navigator.userAgent:  "+navigator.userAgent;
+document.getElementById("demo").innerHTML +="<br><br><br><br>platform:  "+navigator.platform+"<br><br><br><br>language: "+navigator.language;
+document.getElementById("demo").innerHTML += "<br><br><br><br>onLine:  "+navigator.onLine+"<br><br><br><br>javaEnabled:  "+navigator.javaEnabled();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+</head>
+<body>
+ <button>Clcik</button>
+ <h1>Hello</h1>
+ <p>Hello</p>
+<script type="text/javascript">
+  var arrEvent=[]
+
+  document.body.onclick = function(event) {
+
+  var name="Obj"+Date.now()
+
+  name={
+    target:event.target.tagName,
+    cordX:event.clientX,
+    cordY:event.clientY,
+    
+  }
+   arrEvent.push(name)
+
+};
+setTimeout(function() {
+
+  for(let ob of  arrEvent){
+
+    console.log(ob)
+  
+    
+  }
+
+}, 5000)
+
+</script>
+
+</body>
+</html>

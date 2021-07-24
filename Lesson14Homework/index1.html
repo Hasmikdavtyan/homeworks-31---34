@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="input" value="Gevorg">
+<button>Copy Count</button>
+<script>
+  var count=0
+  document.body.addEventListener('copy',()=>{
+     count++
+  })
+  document.body.addEventListener('paste', (e)=>{
+     e.preventDefault()
+  	
+  })
+
+
+  document.querySelector('button').addEventListener('click',()=>{
+  	alert(count)
+  })
+  
+</script>
+</body>
+</html>

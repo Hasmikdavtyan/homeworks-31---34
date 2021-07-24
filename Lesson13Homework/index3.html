@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" type="tel">
+  <span></span>
+<script type="text/javascript">
+    var input= document.querySelector("input");
+    var span= document.querySelector("span");
+
+function checkPhoneKey(key) {
+ if(span.innerHTML=='strong'){
+   return false
+ }else{
+    if(input.value.length<3){
+    span.innerHTML='week'
+    }else {
+        if(key=='@' || key=='!' ||  input.value.includes('@')){
+             
+           span.innerHTML='strong'
+           
+           return
+        }
+        if(input.value.length>=3){
+          span.innerHTML='normal'
+        }
+        
+
+  }
+
+ }
+
+
+}
+  </script>
+</body>
